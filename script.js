@@ -11,147 +11,153 @@ after significant daily events such as sunrise, sunset, at midnight, etc.
 */
 
 $(document).ready(function () {
-  // const monthNames = [
-  //   "Jan",
-  //   "Feb",
-  //   "March",
-  //   "April",
-  //   "May",
-  //   "June",
-  //   "July",
-  //   "Aug",
-  //   "Sept",
-  //   "Oct",
-  //   "Nov",
-  //   "Dec",
-  // ]
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ]
 
-  // const dayNames = [
-  //   "Sunday",
-  //   "Monday",
-  //   "Tuesday",
-  //   "Wednesday",
-  //   "Thursday",
-  //   "Friday",
-  //   "Saturday",
-  // ]
-  // const dayOfWeek = document.getElementById("dayOfWeek")
-  // const todaysDate = document.getElementById("todaysDate")
-  // const time = document.getElementById("time")
-  // const currentTemp = document.getElementById("currentTemp")
-  // const degreeSymbol = document.getElementById("degreeSymbol")
-  // const lowTemp = document.getElementById("lowTemp")
-  // const tempRangeBar = document.getElementById("tempRangeBar")
-  // const tempRangeContainer = document.getElementById("tempRangeContainer")
-  // const tempRangeBg = document.getElementById("tempRangeBg")
-  // const highTemp = document.getElementById("highTemp")
-  // const weatherIcon = document.getElementById("weatherIcon")
-  // const detailedForecast = document.getElementById("detailedForecast")
-  // const bigForecast = document.getElementById("bigForecast")
-  // const medForecast = document.getElementById("medForecast")
-  // const smallForecast = document.getElementById("smallForecast")
-  // const solarStats = document.getElementById("solarStats")
-  // const sunriseTime = document.getElementById("sunriseTime")
-  // const sunsetTime = document.getElementById("sunsetTime")
-  // const sunIconUp = document.getElementById("sunIconUp")
-  // const sunIconDown = document.getElementById("sunIconDown")
+  const dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ]
+  const dayOfWeek = document.getElementById("dayOfWeek")
+  const todaysDate = document.getElementById("todaysDate")
+  const time = document.getElementById("time")
+  const currentTemp = document.getElementById("currentTemp")
+  const degreeSymbol = document.getElementById("degreeSymbol")
+  const lowTemp = document.getElementById("lowTemp")
+  const tempRangeBar = document.getElementById("tempRangeBar")
+  const tempRangeContainer = document.getElementById("tempRangeContainer")
+  const tempRangeBg = document.getElementById("tempRangeBg")
+  const highTemp = document.getElementById("highTemp")
+  const weatherIcon = document.getElementById("weatherIcon")
+  const detailedForecast = document.getElementById("detailedForecast")
+  const bigForecast = document.getElementById("bigForecast")
+  const medForecast = document.getElementById("medForecast")
+  const smallForecast = document.getElementById("smallForecast")
+  const solarStats = document.getElementById("solarStats")
+  const sunriseTime = document.getElementById("sunriseTime")
+  const sunsetTime = document.getElementById("sunsetTime")
+  const sunIconUp = document.getElementById("sunIconUp")
+  const sunIconDown = document.getElementById("sunIconDown")
 
-  // const shortForecastDisplay = document.getElementById("shortForecastDisplay")
-  // var globalDate = new Date()
-  // var timeString = globalDate.toTimeString().substring(0, 5)
-  // dayArray = []
+  const shortForecastDisplay = document.getElementById("shortForecastDisplay")
+  var globalDate = new Date()
+  var timeString = globalDate.toTimeString().substring(0, 5)
+  dayArray = []
 
-  // var dataObj = {
-  //   aqi: null,
-  //   aqi_msg: "",
-  //   aqi_table: {
-  //     co: null,
-  //     nh3: null,
-  //     no: null,
-  //     no2: null,
-  //     o3: null,
-  //     pm10: null,
-  //     pm2_5: null,
-  //     so2: null,
-  //   },
-  //   aqi_msg: {
-  //     co: "",
-  //     nh3: "",
-  //     no: "",
-  //     no2: "",
-  //     o3: "",
-  //     pm10: "",
-  //     pm2_5: "",
-  //     so2: "",
-  //   },
-  //   air_quality: {
-  //     co: null,
-  //     nh3: null,
-  //     no: null,
-  //     no2: null,
-  //     o3: null,
-  //     pm10: null,
-  //     pm2_5: null,
-  //     so2: null,
-  //   },
-  //   astronomical: {
-  //     astronomical_twilight_begin: "",
-  //     astronomical_twilight_end: "",
-  //     civil_twilight_begin: "",
-  //     civil_twilight_end: "",
-  //     day_length: "",
-  //     moon: { age: "", moonrise: "", moonset: "", phase: "" },
-  //     nautical_twilight_begin: "",
-  //     nautical_twilight_end: "",
-  //     solar_noon: "",
-  //     sunrise: "",
-  //     sunset: "",
-  //   },
-  //   bestDayToGetOutside: "",
-  //   chanceHail: null,
-  //   chancePrecipitation: null,
-  //   chanceRain: null,
-  //   chanceThunder: null,
-  //   currentConditions: "",
-  //   currentTemp: null,
-  //   date: {
-  //     currentTime: "",
-  //     currentTimePeriod: "",
-  //     dayOfWeek: "",
-  //     displayTime: "",
-  //     isDaytime: "",
-  //     millis: null,
-  //     month: "",
-  //     season: "",
-  //     todaysDate: "",
-  //     year: "",
-  //   },
-  //   detailedForecast: "",
-  //   humitidy: null,
-  //   pollen: {
-  //     grass: null,
-  //     overall: null,
-  //     tree: null,
-  //     ragweed: null,
-  //   },
-  //   pressure: null,
-  //   pressureDirection: "",
-  //   shortForecast: "",
-  //   shortForecastForBg: "",
-  //   snow: {
-  //     chanceSnow: null,
-  //     snowAccumInchesMax: null,
-  //     snowAccumInchesMin: null,
-  //   },
-  //   todayHigh: null,
-  //   todayLow: null,
-  //   tomorrowHigh: null,
-  //   tomorrowLow: null,
-  //   uvIndex: null,
-  //   visibilityMiles: null,
-  //   windDirection: "",
-  //   windSpeed: "",
-  // }
+  //
+
+  document.getElementById("dayOfWeek").textContent = "Testing1";
+
+  //
+
+  var dataObj = {
+    aqi: null,
+    aqi_msg: "",
+    aqi_table: {
+      co: null,
+      nh3: null,
+      no: null,
+      no2: null,
+      o3: null,
+      pm10: null,
+      pm2_5: null,
+      so2: null,
+    },
+    aqi_msg: {
+      co: "",
+      nh3: "",
+      no: "",
+      no2: "",
+      o3: "",
+      pm10: "",
+      pm2_5: "",
+      so2: "",
+    },
+    air_quality: {
+      co: null,
+      nh3: null,
+      no: null,
+      no2: null,
+      o3: null,
+      pm10: null,
+      pm2_5: null,
+      so2: null,
+    },
+    astronomical: {
+      astronomical_twilight_begin: "",
+      astronomical_twilight_end: "",
+      civil_twilight_begin: "",
+      civil_twilight_end: "",
+      day_length: "",
+      moon: { age: "", moonrise: "", moonset: "", phase: "" },
+      nautical_twilight_begin: "",
+      nautical_twilight_end: "",
+      solar_noon: "",
+      sunrise: "",
+      sunset: "",
+    },
+    bestDayToGetOutside: "",
+    chanceHail: null,
+    chancePrecipitation: null,
+    chanceRain: null,
+    chanceThunder: null,
+    currentConditions: "",
+    currentTemp: null,
+    date: {
+      currentTime: "",
+      currentTimePeriod: "",
+      dayOfWeek: "",
+      displayTime: "",
+      isDaytime: "",
+      millis: null,
+      month: "",
+      season: "",
+      todaysDate: "",
+      year: "",
+    },
+    detailedForecast: "",
+    humitidy: null,
+    pollen: {
+      grass: null,
+      overall: null,
+      tree: null,
+      ragweed: null,
+    },
+    pressure: null,
+    pressureDirection: "",
+    shortForecast: "",
+    shortForecastForBg: "",
+    snow: {
+      chanceSnow: null,
+      snowAccumInchesMax: null,
+      snowAccumInchesMin: null,
+    },
+    todayHigh: null,
+    todayLow: null,
+    tomorrowHigh: null,
+    tomorrowLow: null,
+    uvIndex: null,
+    visibilityMiles: null,
+    windDirection: "",
+    windSpeed: "",
+  }
 
 
   // ///////////////////////////////////
@@ -160,110 +166,110 @@ $(document).ready(function () {
   // ///////////////////////////////////
   // ///////////////////////////////////
 
-  // // Rapid Development Mode does not make any API calls
+  // Rapid Development Mode does not make any API calls
 
-  // function rapidDevelopmentMode() {
-  //     dataObj = {
-  //   aqi: null,
-  //   aqi_msg: "",
-  //   aqi_table: {
-  //     co: null,
-  //     nh3: null,
-  //     no: null,
-  //     no2: null,
-  //     o3: null,
-  //     pm10: null,
-  //     pm2_5: null,
-  //     so2: null,
-  //   },
-  //   aqi_msg: {
-  //     co: "",
-  //     nh3: "",
-  //     no: "",
-  //     no2: "",
-  //     o3: "",
-  //     pm10: "",
-  //     pm2_5: "",
-  //     so2: "",
-  //   },
-  //   air_quality: {
-  //     co: 0.3705,
-  //     nh3: 0.25,
-  //     no: 0.28,
-  //     no2: 1.3,
-  //     o3: 0.052,
-  //     pm10: 2.83,
-  //     pm2_5: 2.64,
-  //     so2: 2.12,
-  //   },
-  //   astronomical: {
-  //     astronomical_twilight_begin: "04:42",
-  //     astronomical_twilight_end: "21:39",
-  //     civil_twilight_begin: "06:01",
-  //     civil_twilight_end: "20:20",
-  //     day_length: "06:15",
-  //     moon: {
-  //       age: "",
-  //       moonrise: "",
-  //       moonset: "",
-  //       phase: "",
-  //     },
-  //     nautical_twilight_begin: "05:23",
-  //     nautical_twilight_end: "20:58",
-  //     solar_noon: "13:10",
-  //     sunrise: "06:32",
-  //     sunset: "20:37",
-  //   },
-  //   bestDayToGetOutside: "",
-  //   chanceHail: null,
-  //   chancePrecipitation: null,
-  //   chanceRain: null,
-  //   chanceThunder: null,
-  //   currentConditions: "Cloudy",
-  //   currentTemp: 84,
-  //   date: {
-  //     currentTime: "13:27",
-  //     currentTimePeriod: "day",
-  //     dayOfWeek: "Thursday",
-  //     displayTime: "6:47",
-  //     isDaytime: "true",
-  //     millis: null,
-  //     month: "August",
-  //     season: "Summer",
-  //     todaysDate: 5,
-  //     year: 2021,
-  //   },
-  //   detailedForecast:
-  //     "Mostly sunny, with a high near 56. Northwest wind 1 to 5 mph.",
-  //   humitidy: null,
-  //   pollen: {
-  //     grass: null,
-  //     overall: null,
-  //     tree: null,
-  //     ragweed: null,
-  //   },
-  //   pressure: null,
-  //   pressureDirection: "",
-  //   shortForecast: "Cloudy",
-  //   shortForecastForBg: "Cloudy",
-  //   snow: {
-  //     chanceSnow: null,
-  //     snowAccumInchesMax: null,
-  //     snowAccumInchesMin: null,
-  //   },
-  //   todayHigh: 106,
-  //   todayLow: 81,
-  //   tomorrowHigh: 60,
-  //   tomorrowLow: 42,
-  //   uvIndex: null,
-  //   visibilityMiles: null,
-  //   windDirection: "WSW",
-  //   windSpeed: "1 mph",
-  // }
+  function rapidDevelopmentMode() {
+      dataObj = {
+    aqi: null,
+    aqi_msg: "",
+    aqi_table: {
+      co: null,
+      nh3: null,
+      no: null,
+      no2: null,
+      o3: null,
+      pm10: null,
+      pm2_5: null,
+      so2: null,
+    },
+    aqi_msg: {
+      co: "",
+      nh3: "",
+      no: "",
+      no2: "",
+      o3: "",
+      pm10: "",
+      pm2_5: "",
+      so2: "",
+    },
+    air_quality: {
+      co: 0.3705,
+      nh3: 0.25,
+      no: 0.28,
+      no2: 1.3,
+      o3: 0.052,
+      pm10: 2.83,
+      pm2_5: 2.64,
+      so2: 2.12,
+    },
+    astronomical: {
+      astronomical_twilight_begin: "04:42",
+      astronomical_twilight_end: "21:39",
+      civil_twilight_begin: "06:01",
+      civil_twilight_end: "20:20",
+      day_length: "06:15",
+      moon: {
+        age: "",
+        moonrise: "",
+        moonset: "",
+        phase: "",
+      },
+      nautical_twilight_begin: "05:23",
+      nautical_twilight_end: "20:58",
+      solar_noon: "13:10",
+      sunrise: "06:32",
+      sunset: "20:37",
+    },
+    bestDayToGetOutside: "",
+    chanceHail: null,
+    chancePrecipitation: null,
+    chanceRain: null,
+    chanceThunder: null,
+    currentConditions: "Cloudy",
+    currentTemp: 84,
+    date: {
+      currentTime: "13:27",
+      currentTimePeriod: "day",
+      dayOfWeek: "Thursday",
+      displayTime: "6:47",
+      isDaytime: "true",
+      millis: null,
+      month: "August",
+      season: "Summer",
+      todaysDate: 5,
+      year: 2021,
+    },
+    detailedForecast:
+      "Mostly sunny, with a high near 56. Northwest wind 1 to 5 mph.",
+    humitidy: null,
+    pollen: {
+      grass: null,
+      overall: null,
+      tree: null,
+      ragweed: null,
+    },
+    pressure: null,
+    pressureDirection: "",
+    shortForecast: "Cloudy",
+    shortForecastForBg: "Cloudy",
+    snow: {
+      chanceSnow: null,
+      snowAccumInchesMax: null,
+      snowAccumInchesMin: null,
+    },
+    todayHigh: 106,
+    todayLow: 81,
+    tomorrowHigh: 60,
+    tomorrowLow: 42,
+    uvIndex: null,
+    visibilityMiles: null,
+    windDirection: "WSW",
+    windSpeed: "1 mph",
+  }
 
-  // setTimeout(() => {
-  //   console.log(dataObj)
-  // }, 200)
+  setTimeout(() => {
+    console.log(dataObj)
+  }, 200)
 
   // setTimeout(() => {
   //   updateTime()
@@ -273,10 +279,10 @@ $(document).ready(function () {
   //   renderSunriseAndSunsetDisplay()
   //   calculateAQI()
   // }, 300)
-  // }
+  }
 
-  // // Uncomment for rapid development mode
-  //  rapidDevelopmentMode();
+  // Uncomment for rapid development mode
+   rapidDevelopmentMode();
 
   // ///////////////////////////////////
   // ///////////////////////////////////
@@ -1088,10 +1094,10 @@ $(document).ready(function () {
   //   dayOfWeek.innerText = dataObj.date.dayOfWeek
   //   todaysDate.innerText = `${dataObj.date.month} ${dataObj.date.todaysDate}`
 
-  //   // Refresh background image every 30 minutes
-  //   if ((m === 0 && s === 0) || (m === 30 && s === 0)) {
-  //     renderBackground()
-  //   }
+  //   // // Refresh background image every 30 minutes
+  //   // if ((m === 0 && s === 0) || (m === 30 && s === 0)) {
+  //   //   renderBackground()
+  //   // }
 
   //   // Refresh API data at sunrise and sunset
   //   if (
