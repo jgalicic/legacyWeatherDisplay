@@ -282,7 +282,7 @@ $(document).ready(function () {
   }
 
   // Uncomment for rapid development mode
-   rapidDevelopmentMode();
+  // rapidDevelopmentMode();
 
   // ///////////////////////////////////
   // ///////////////////////////////////
