@@ -1,95 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./fontawesome/css/all.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script
-			  src="https://code.jquery.com/jquery-3.6.0.min.js"
-			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-			  crossorigin="anonymous"></script>
-        
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bevan&family=Righteous&family=Londrina+Outline&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./fontawesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="weatherAnicons.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
 
-  <title>Weather Display</title>
-</head>
-
-<body>
-  <div id="container">
-    <div id="headerContainer">
-      <div id="dateContainer">
-        <p id="dayOfWeek"></p>
-        <p id="todaysDate"></p>
+    <title>Weather Display for iPad</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="headerContainer">
+        <div id="dateContainer">
+          <p id="dayOfWeek"></p>
+          <p id="todaysDate"></p>
+        </div>
+        <div id="detailedForecast">
+          <span id="bigForecast"></span>
+          <span id="medForecast"></span>
+          <span id="smallForecast"></span>
+        </div>
       </div>
-      <div id="detailedForecast">
-        <span id="bigForecast"></span>
-        <span id="medForecast"></span>
-        <span id="smallForecast"></span>
+
+      <div id="timeContainer"></div>
+      <div id="weatherContainer">
+        <!--TempContainer-->
+        <div id="tempContainer">
+          <div id="innerTempContainer">
+            <div id="currentTemp"></div>
+            <div id="degreeSymbol">°</div>
+          </div>
+
+          <div id="tempRangeContainer">
+            <div id="lowTemp"></div>
+            <div id="tempRangeBar"></div>
+            <div id="highTemp"></div>
+          </div>
+          <div id="tempRangeBg"></div>
+        </div>
+        <!--Time-->
+        <p id="time"></p>
+        <div id="weatherIconContainer">
+          <!-- <div id="innerWeatherIconContainer">
+            
+          </div> -->
+          <i id="weatherIcon"></i>
+          <p id="shortForecastDisplay"></p>
+        </div>
+      </div>
+      <!--solarStats-->
+      <div id="solarStats">
+        <div class="sunriseContainer">
+          <div id="sunUpIcons" class="sunriseIcons">
+            <i id="arrowUp" class="fas fa-chevron-up"></i>
+            <i id="sunUp" class="fas fa-sun"></i>
+          </div>
+          <p id="sunriseTime"></p>
+        </div>
+        <div class="sunriseContainer">
+          <div id="sunDownIcons" class="sunriseIcons">
+            <i id="sunDown" class="fas fa-sun"></i>
+            <i id="arrowDown" class="fas fa-chevron-down"></i>
+          </div>
+          <p id="sunsetTime"></p>
+        </div>
       </div>
     </div>
 
-    <div id="timeContainer"></div>
-    <div id="weatherContainer">
-      <!--TempContainer-->
-      <div id="tempContainer">
-        <div id="innerTempContainer">
-          <div id="currentTemp"></div>
-          <div id="degreeSymbol">°</div>
-        </div>
-
-        <div id="tempRangeContainer">
-          <div id="lowTemp"></div>
-          <div id="tempRangeBar"></div>
-          <div id="highTemp"></div>
-        </div>
-        <div id="tempRangeBg"></div>
-      </div>
-      <!--Time-->
-      <p id="time"></p>
-      <div id="weatherIconContainer">
-        <!-- <div id="innerWeatherIconContainer">
-          
-        </div> -->
-        <i id="weatherIcon"></i>
-        <p id="shortForecastDisplay"></p>
-      </div>
-    </div>
-    <!--solarStats-->
-    <div id="solarStats">
-      <div class="sunriseContainer">
-        <div id="sunUpIcons" class="sunriseIcons">
-          <img id="sunIconUp" src="./img/svg/sun-up.svg"/>
-        </div>
-        <p id="sunriseTime"></p>
-      </div>
-      <div class="sunriseContainer">
-        <div id="sunDownIcons" class="sunriseIcons">
-          <img id="sunIconDown" src="./img/svg/sun-down.svg"/>
-        </div>
-        <p id="sunsetTime"></p>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- Testing -->
-  <div class="testing">
-    <p>Font Awesome? <i class="fas fa-sun"></i></p>
-    <p>JQuery? <span>(this text should be green)</span> </p>
-
-    <script>
-      $(document).ready(function(){
-        $("p span").css("color", "red")
-      });
-      </script>
-
-    <!-- End testing  -->
-  </div>
-  <script src="script.js"></script>
- 
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
