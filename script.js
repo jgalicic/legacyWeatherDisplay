@@ -1672,4 +1672,6 @@ $(document).ready(function () {
     $(sunIconDown).attr("src", "./img/svg/sun-down-warm.svg")
     $(sunIconUp).attr("src", "./img/svg/sun-up-warm.svg")
   }
+
+  $("p span").css("color", "red")
 }) // end jQuery
