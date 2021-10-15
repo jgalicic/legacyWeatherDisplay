@@ -11,61 +11,61 @@ after significant daily events such as sunrise, sunset, at midnight, etc.
 */
   const dayOfWeek = document.getElementById("dayOfWeek")
   const dateContainer = document.getElementById("dateContainer")
-  const todaysDate = document.getElementById("todaysDate")
-  const time = document.getElementById("time")
-  const currentTemp = document.getElementById("currentTemp")
-  const degreeSymbol = document.getElementById("degreeSymbol")
-  const lowTemp = document.getElementById("lowTemp")
-  const tempRangeBar = document.getElementById("tempRangeBar")
-  const tempRangeContainer = document.getElementById("tempRangeContainer")
-  const tempRangeBg = document.getElementById("tempRangeBg")
-  const highTemp = document.getElementById("highTemp")
-  const weatherIcon = document.getElementById("weatherIcon")
-  const detailedForecast = document.getElementById("detailedForecast")
-  const bigForecast = document.getElementById("bigForecast")
-  const medForecast = document.getElementById("medForecast")
-  const smallForecast = document.getElementById("smallForecast")
-  const solarStats = document.getElementById("solarStats")
-  const sunriseTime = document.getElementById("sunriseTime")
-  const sunsetTime = document.getElementById("sunsetTime")
-  const sunIconUp = document.getElementById("sunIconUp")
-  const sunIconDown = document.getElementById("sunIconDown")
+  // const todaysDate = document.getElementById("todaysDate")
+  // const time = document.getElementById("time")
+  // const currentTemp = document.getElementById("currentTemp")
+  // const degreeSymbol = document.getElementById("degreeSymbol")
+  // const lowTemp = document.getElementById("lowTemp")
+  // const tempRangeBar = document.getElementById("tempRangeBar")
+  // const tempRangeContainer = document.getElementById("tempRangeContainer")
+  // const tempRangeBg = document.getElementById("tempRangeBg")
+  // const highTemp = document.getElementById("highTemp")
+  // const weatherIcon = document.getElementById("weatherIcon")
+  // const detailedForecast = document.getElementById("detailedForecast")
+  // const bigForecast = document.getElementById("bigForecast")
+  // const medForecast = document.getElementById("medForecast")
+  // const smallForecast = document.getElementById("smallForecast")
+  // const solarStats = document.getElementById("solarStats")
+  // const sunriseTime = document.getElementById("sunriseTime")
+  // const sunsetTime = document.getElementById("sunsetTime")
+  // const sunIconUp = document.getElementById("sunIconUp")
+  // const sunIconDown = document.getElementById("sunIconDown")
 
-  dayOfWeek.textContent = 'FRIYAY!!';
+  dayOfWeek.textContent = 'FRIYAY!! Whohoo!';
   dateContainer.appendChild(dayOfWeek);
 
-  const monthNames = [
-    "Jan",
-    "Feb",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "Aug",
-    "Sept",
-    "Oct",
-    "Nov",
-    "Dec",
-  ]
+  // const monthNames = [
+  //   "Jan",
+  //   "Feb",
+  //   "March",
+  //   "April",
+  //   "May",
+  //   "June",
+  //   "July",
+  //   "Aug",
+  //   "Sept",
+  //   "Oct",
+  //   "Nov",
+  //   "Dec",
+  // ]
 
-  const dayNames = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ]
+  // const dayNames = [
+  //   "Sunday",
+  //   "Monday",
+  //   "Tuesday",
+  //   "Wednesday",
+  //   "Thursday",
+  //   "Friday",
+  //   "Saturday",
+  // ]
 
-  const whiteDisplayColor = "rgb(255, 255, 255)"
-  const warmDisplayColor = "rgb(250, 230, 185)"
+  // const whiteDisplayColor = "rgb(255, 255, 255)"
+  // const warmDisplayColor = "rgb(250, 230, 185)"
 
-  const shortForecastDisplay = document.getElementById("shortForecastDisplay")
-  const globalDate = new Date()
-  let timeString = globalDate.toTimeString().substring(0, 5)
-  dayArray = []
+  // const shortForecastDisplay = document.getElementById("shortForecastDisplay")
+  // const globalDate = new Date()
+  // let timeString = globalDate.toTimeString().substring(0, 5)
+  // dayArray = []
 
   // const dataObj = {
   //   aqi: null,
