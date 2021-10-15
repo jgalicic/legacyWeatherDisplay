@@ -20,7 +20,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -88,7 +88,7 @@ body {
   color: white;
   font-size: 20vw;
   position: relative;
-  bottom: 30px;
+  bottom: 40px;
 }
 
 #weatherContainer {
@@ -195,6 +195,11 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.65);
+}
+
+#solarStats > .sunriseContainer {
+  position: relative;
+  bottom: 40px;
 }
 
 #sunUp {
