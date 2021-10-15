@@ -35,11 +35,6 @@ $(document).ready(function () {
     "Friday",
     "Saturday",
   ]
-
-  const whiteDisplayColor = "rgb(255, 255, 255)"
-  const warmDisplayColor = "rgb(250, 230, 185)"
-
-
   const dayOfWeek = document.getElementById("dayOfWeek")
   const todaysDate = document.getElementById("todaysDate")
   const time = document.getElementById("time")
@@ -62,11 +57,11 @@ $(document).ready(function () {
   const sunIconDown = document.getElementById("sunIconDown")
 
   const shortForecastDisplay = document.getElementById("shortForecastDisplay")
-  const globalDate = new Date()
-  let timeString = globalDate.toTimeString().substring(0, 5)
+  var globalDate = new Date()
+  var timeString = globalDate.toTimeString().substring(0, 5)
   dayArray = []
 
-  const dataObj = {
+  var dataObj = {
     aqi: null,
     aqi_msg: "",
     aqi_table: {
@@ -168,85 +163,102 @@ $(document).ready(function () {
   // Rapid Development Mode does not make any API calls
 
   function rapidDevelopmentMode() {
-      dataObj.aqi = null
-      dataObj.aqi_msg = ""
-      dataObj.aqi_table.co = null
-      dataObj.aqi_table.nh3 = null
-      dataObj.aqi_table.no = null
-      dataObj.aqi_table.no2 = null
-      dataObj.aqi_table.o3 = null
-      dataObj.aqi_table.pm10 = null
-      dataObj.aqi_table.pm2_5 = null
-      dataObj.aqi_table.so2 = null
-      dataObj.aqi_msg.co = ""
-      dataObj.aqi_msg.nh3 = ""
-      dataObj.aqi_msg.no = ""
-      dataObj.aqi_msg.no2 = ""
-      dataObj.aqi_msg.o3 = ""
-      dataObj.aqi_msg.pm10 = ""
-      dataObj.aqi_msg.pm2_5 = ""
-      dataObj.aqi_msg.so2 = ""
-      dataObj.air_quality.co = 0.3705
-      dataObj.air_quality.nh3 = 0.25
-      dataObj.air_quality.no = 0.28
-      dataObj.air_quality.no2 = 1.3
-      dataObj.air_quality.o3 = 0.052
-      dataObj.air_quality.pm10 = 0.052
-      dataObj.air_quality.pm2_5 = 2.64
-      dataObj.air_quality.so2 = 2.12
-      dataObj.astronomical.astronomical_twilight_begin = "04:42"
-      dataObj.astronomical.astronomical_twilight_end = "21:39"
-      dataObj.astronomical.civil_twilight_begin = "06:01"
-      dataObj.astronomical.civil_twilight_end = "20:20"
-      dataObj.astronomical.day_length = "06:15"
-      dataObj.astronomical.moon.age = ""
-      dataObj.astronomical.moon.moonrise = ""
-      dataObj.astronomical.moon.moonset = ""
-      dataObj.astronomical.moon.phase = ""
-      dataObj.astronomical.nautical_twilight_begin = "05:23"
-      dataObj.astronomical.nautical_twilight_end = "20:58"
-      dataObj.astronomical.solar_noon = "13:10"
-      dataObj.astronomical.sunrise = "06:32"
-      dataObj.astronomical.sunset = "20:37"
-      dataObj.bestDayToGetOutside = ""
-      dataObj.chanceHail = null
-      dataObj.chancePrecipitation = null
-      dataObj.chanceRain = null
-      dataObj.chanceThunder = null
-      dataObj.currentConditions = "Cloudy"
-      dataObj.currentTemp = 84
-      dataObj.date
-      dataObj.date.currentTime = "13:27"
-      dataObj.date.currentTimePeriod = "day"
-      dataObj.date.dayOfWeek = "Thursday"
-      dataObj.date.displayTime = "6:47"
-      dataObj.date.isDaytime = "true"
-      dataObj.date.millis = null
-      dataObj.date.month = "August"
-      dataObj.date.season = "Summer"
-      dataObj.date.todaysDate = 5
-      dataObj.date.year = 2021
-      dataObj.detailedForecast = "Mostly sunny, with a high near 56. Northwest wind 1 to 5 mph."
-      dataObj.humitidy= null
-      dataObj.pollen.grass
-      dataObj.pollen.overall
-      dataObj.pollen.tree
-      dataObj.pollen.ragweed
-      dataObj.pressure = null
-      dataObj.pressureDirection = ""
-      dataObj.shortForecast = "Cloudy"
-      dataObj.shortForecastForBg = "Cloudy"
-      dataObj.snow.chanceSnow = null
-      dataObj.snow.snowAccumInchesMax = null,
-      dataObj.snow.snowAccumInchesMin = null,
-      dataObj.todayHigh = 106
-      dataObj.todayLow = 81
-      dataObj.tomorrowHigh = 60
-      dataObj.tomorrowLow = 42
-      dataObj.uvIndex = null
-      dataObj.visibilityMiles = null
-      dataObj.windDirection = "WSW"
-      dataObj.windSpeed = "1 mph"
+      dataObj = {
+    aqi: null,
+    aqi_msg: "",
+    aqi_table: {
+      co: null,
+      nh3: null,
+      no: null,
+      no2: null,
+      o3: null,
+      pm10: null,
+      pm2_5: null,
+      so2: null,
+    },
+    aqi_msg: {
+      co: "",
+      nh3: "",
+      no: "",
+      no2: "",
+      o3: "",
+      pm10: "",
+      pm2_5: "",
+      so2: "",
+    },
+    air_quality: {
+      co: 0.3705,
+      nh3: 0.25,
+      no: 0.28,
+      no2: 1.3,
+      o3: 0.052,
+      pm10: 2.83,
+      pm2_5: 2.64,
+      so2: 2.12,
+    },
+    astronomical: {
+      astronomical_twilight_begin: "04:42",
+      astronomical_twilight_end: "21:39",
+      civil_twilight_begin: "06:01",
+      civil_twilight_end: "20:20",
+      day_length: "06:15",
+      moon: {
+        age: "",
+        moonrise: "",
+        moonset: "",
+        phase: "",
+      },
+      nautical_twilight_begin: "05:23",
+      nautical_twilight_end: "20:58",
+      solar_noon: "13:10",
+      sunrise: "06:32",
+      sunset: "20:37",
+    },
+    bestDayToGetOutside: "",
+    chanceHail: null,
+    chancePrecipitation: null,
+    chanceRain: null,
+    chanceThunder: null,
+    currentConditions: "Cloudy",
+    currentTemp: 84,
+    date: {
+      currentTime: "13:27",
+      currentTimePeriod: "day",
+      dayOfWeek: "Thursday",
+      displayTime: "6:47",
+      isDaytime: "true",
+      millis: null,
+      month: "August",
+      season: "Summer",
+      todaysDate: 5,
+      year: 2021,
+    },
+    detailedForecast:
+      "Mostly sunny, with a high near 56. Northwest wind 1 to 5 mph.",
+    humitidy: null,
+    pollen: {
+      grass: null,
+      overall: null,
+      tree: null,
+      ragweed: null,
+    },
+    pressure: null,
+    pressureDirection: "",
+    shortForecast: "Cloudy",
+    shortForecastForBg: "Cloudy",
+    snow: {
+      chanceSnow: null,
+      snowAccumInchesMax: null,
+      snowAccumInchesMin: null,
+    },
+    todayHigh: 106,
+    todayLow: 81,
+    tomorrowHigh: 60,
+    tomorrowLow: 42,
+    uvIndex: null,
+    visibilityMiles: null,
+    windDirection: "WSW",
+    windSpeed: "1 mph",
   }
 
   setTimeout(() => {
@@ -261,10 +273,10 @@ $(document).ready(function () {
     renderSunriseAndSunsetDisplay()
     calculateAQI()
   }, 300)
-  
+  }
 
   // Uncomment for rapid development mode
-    rapidDevelopmentMode()
+  // rapidDevelopmentMode();
 
   ///////////////////////////////////
   ///////////////////////////////////
@@ -332,10 +344,10 @@ $(document).ready(function () {
       url: "https://api.sunrise-sunset.org/json?lat=47.6&lng=-122.3",
       dataType: "json",
       success: function (data) {
-        const d = new Date()
+        var d = new Date()
 
-        for (let key in data.results) {
-          const myDate = new Date(
+        for (var key in data.results) {
+          var myDate = new Date(
             `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()} ${
               data.results[key]
             } UTC`
@@ -394,7 +406,7 @@ $(document).ready(function () {
       "23:59",
       "znight",
     ]
-    for (let i = 0; i < dayArray.length; i += 2) {
+    for (var i = 0; i < dayArray.length; i += 2) {
       if (dataObj.date.currentTime <= dayArray[i]) {
         dataObj.date.currentTimePeriod = dayArray[i + 1]
         return
@@ -438,8 +450,8 @@ $(document).ready(function () {
       url: "https://api.weather.gov/gridpoints/SEW/124,67/forecast/hourly",
       dataType: "json",
       success: function (data) {
-        let tracker = 0
-        let MAX = 10
+        var tracker = 0
+        var MAX = 10
 
         while (tracker < MAX) {
           if (
@@ -1009,7 +1021,7 @@ $(document).ready(function () {
   function getPseudoHigh() {
     // Estimate what the daily high should be if it is unavailable from the API
     // console.log("Getting pseudoHigh")
-    const pseudoHigh = dataObj.currentTemp
+    var pseudoHigh = dataObj.currentTemp
     if (dataObj.date.currentTimePeriod === "dayafternoon") pseudoHigh += 4
     if (dataObj.date.currentTimePeriod === "evening") pseudoHigh += 5
     if (dataObj.date.currentTimePeriod === "sunset") pseudoHigh += 6
@@ -1026,7 +1038,7 @@ $(document).ready(function () {
 
   function populateDetailedForecast() {
     smallForecast.innerText = ""
-    const splitForecast = dataObj.detailedForecast.split(".")
+    var splitForecast = dataObj.detailedForecast.split(".")
     splitForecast.pop() // last element is empty so remove it
 
     // splitForecast equal to 1
@@ -1047,7 +1059,7 @@ $(document).ready(function () {
     }
 
     // splitForecast bigger than 2
-    for (let i = 0; i < splitForecast.length; i++) {
+    for (var i = 0; i < splitForecast.length; i++) {
       if (i === 0) {
         bigForecast.innerText = `${splitForecast[i]}.`
       } else if (i === 1) {
@@ -1060,10 +1072,10 @@ $(document).ready(function () {
 
   function updateTime() {
     // Date & Time
-    const d = new Date()
-    const m = d.getMinutes()
-    const s = d.getSeconds()
-    const h = d.getHours()
+    var d = new Date()
+    var m = d.getMinutes()
+    var s = d.getSeconds()
+    var h = d.getHours()
 
     timeString = d.toTimeString().substring(0, 5)
 
@@ -1558,8 +1570,8 @@ $(document).ready(function () {
   }
 
   function getBgImg() {
-    let string = ""
-    let conditions = ""
+    var string
+    var conditions
 
     if (getSpecialOccasion()) {
       string = getSpecialOccasion()
@@ -1572,7 +1584,7 @@ $(document).ready(function () {
   }
 
   function getSpecialOccasion() {
-    let conditions = dataObj.shortForecastForBg.replace(/\s/g, "").toLowerCase()
+    var conditions = dataObj.shortForecastForBg.replace(/\s/g, "").toLowerCase()
     // Check for pride weekend
     if (dataObj.date.month.toLowerCase() == "june") {
       if (
@@ -1607,8 +1619,8 @@ $(document).ready(function () {
 
   function renderSunriseAndSunsetDisplay() {
     // console.log("Getting Sunrise and Sunset Display")
-    const sunriseDisplay = tConvert(dataObj.astronomical.sunrise)
-    const sunsetDisplay = tConvert(dataObj.astronomical.sunset)
+    var sunriseDisplay = tConvert(dataObj.astronomical.sunrise)
+    var sunsetDisplay = tConvert(dataObj.astronomical.sunset)
 
     sunriseTime.innerHTML = `${sunriseDisplay}&nbsp;`
     sunsetTime.innerHTML = `${sunsetDisplay}`
@@ -1616,7 +1628,7 @@ $(document).ready(function () {
 
   function renderDayTimeMode() {
     // console.log("Rendering DayTime Mode")
-
+    var whiteDisplayColor = "rgb(255, 255, 255)"
 
     $(todaysDate).css("color", whiteDisplayColor)
     $(dayOfWeek).css("color", whiteDisplayColor)
@@ -1638,7 +1650,7 @@ $(document).ready(function () {
 
   function renderNightTimeMode() {
     // console.log("Rendering NightTime Mode")
-
+    var warmDisplayColor = "rgb(250, 230, 185)"
 
     $(todaysDate).css("color", warmDisplayColor)
     $(dayOfWeek).css("color", warmDisplayColor)
