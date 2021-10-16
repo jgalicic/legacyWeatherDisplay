@@ -160,12 +160,12 @@ $(document).ready(function () {
   //     isDaytime: "true",
   //     millis: null,
   //     month: "June",
-  //     season: "Spring",
+  //     season: "Cloudy",
   //     todaysDate: 21,
   //     year: 2020,
   //   },
   //   detailedForecast:
-  //     "Mostly sunny, with a high near 56. Northwest wind 1 to 5 mph.",
+  //     "Mostly cloudy, with a high near 56. Northwest wind 1 to 5 mph.",
   //   humitidy: null,
   //   pollen: {
   //     grass: null,
@@ -175,15 +175,15 @@ $(document).ready(function () {
   //   },
   //   pressure: null,
   //   pressureDirection: "",
-  //   shortForecast: "Sunny",
-  //   shortForecastForBg: "Sunny",
+  //   shortForecast: "Cloudy",
+  //   shortForecastForBg: "Cloudy",
   //   snow: {
   //     chanceSnow: null,
   //     snowAccumInchesMax: null,
   //     snowAccumInchesMin: null,
   //   },
-  //   todayHigh: 76,
-  //   todayLow: 60,
+  //   todayHigh: 56,
+  //   todayLow: 50,
   //   tomorrowHigh: 60,
   //   tomorrowLow: 42,
   //   uvIndex: null,
@@ -208,7 +208,7 @@ $(document).ready(function () {
   ///////////////////////////////
   ///////////////////////////////
 
-  initializeInfoRequests()
+   initializeInfoRequests()
 
   function initializeInfoRequests() {
     getDateInfo(function () {
